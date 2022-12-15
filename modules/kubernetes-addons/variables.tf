@@ -15,6 +15,12 @@ variable "eks_worker_security_group_id" {
   default     = ""
 }
 
+variable "data_plane_wait_arn" {
+  description = "Addon deployment will not proceed until this value is known. Set to node group/Fargate profile ARN to wait for data plane to be ready before provisioning addons"
+  type        = string
+  default     = ""
+}
+
 variable "auto_scaling_group_names" {
   description = "List of self-managed node groups autoscaling group names"
   type        = list(string)
@@ -41,6 +47,12 @@ variable "irsa_iam_permissions_boundary" {
 
 variable "eks_oidc_provider" {
   description = "The OpenID Connect identity provider (issuer URL without leading `https://`)"
+  type        = string
+  default     = null
+}
+
+variable "eks_oidc_provider_arn" {
+  description = "The OpenID Connect identity provider ARN"
   type        = string
   default     = null
 }
@@ -93,6 +105,25 @@ variable "self_managed_coredns_helm_config" {
   type        = any
   default     = {}
 }
+
+variable "remove_default_coredns_deployment" {
+  description = "Determines whether the default deployment of CoreDNS is removed and ownership of kube-dns passed to Helm"
+  type        = bool
+  default     = false
+}
+
+variable "enable_coredns_cluster_proportional_autoscaler" {
+  description = "Enable cluster-proportional-autoscaler for CoreDNS"
+  type        = bool
+  default     = true
+}
+
+variable "coredns_cluster_proportional_autoscaler_helm_config" {
+  description = "Helm provider config for the CoreDNS cluster-proportional-autoscaler"
+  default     = {}
+  type        = any
+}
+
 
 variable "amazon_eks_kube_proxy_config" {
   description = "ConfigMap for Amazon EKS Kube-Proxy add-on"
@@ -168,6 +199,25 @@ variable "coredns_autoscaler_helm_config" {
   default     = {}
 }
 
+#-----------AWS Appmesh-------------
+variable "enable_appmesh_controller" {
+  description = "Enable AppMesh add-on"
+  type        = bool
+  default     = false
+}
+
+variable "appmesh_helm_config" {
+  description = "AppMesh Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "appmesh_irsa_policies" {
+  description = "Additional IAM policies for a IAM role for service accounts"
+  type        = list(string)
+  default     = []
+}
+
 #-----------Crossplane ADDON-------------
 variable "enable_crossplane" {
   description = "Enable Crossplane add-on"
@@ -183,15 +233,9 @@ variable "crossplane_helm_config" {
 
 variable "crossplane_aws_provider" {
   description = "AWS Provider config for Crossplane"
-  type = object({
-    enable                   = bool
-    provider_aws_version     = string
-    additional_irsa_policies = list(string)
-  })
+  type        = any
   default = {
-    enable                   = false
-    provider_aws_version     = "v0.24.1"
-    additional_irsa_policies = []
+    enable = false
   }
 }
 
@@ -206,6 +250,14 @@ variable "crossplane_jet_aws_provider" {
     enable                   = false
     provider_aws_version     = "v0.24.1"
     additional_irsa_policies = []
+  }
+}
+
+variable "crossplane_kubernetes_provider" {
+  description = "Kubernetes Provider config for Crossplane"
+  type        = any
+  default = {
+    enable = false
   }
 }
 
@@ -361,6 +413,19 @@ variable "metrics_server_helm_config" {
   default     = {}
 }
 
+#-----------SYSDIG-------------
+variable "enable_sysdig_agent" {
+  description = "Enable Sysdig Agent add-on"
+  type        = bool
+  default     = false
+}
+
+variable "sysdig_agent_helm_config" {
+  description = "Sysdig Helm Chart config"
+  type        = any
+  default     = {}
+}
+
 #-----------TETRATE ISTIO-------------
 variable "enable_tetrate_istio" {
   description = "Enable Tetrate Istio add-on"
@@ -426,6 +491,25 @@ variable "tetrate_istio_gateway_helm_config" {
   description = "Istio `gateway` Helm Chart config"
   type        = any
   default     = {}
+}
+
+#-----------THANOS-------------
+variable "enable_thanos" {
+  description = "Enable Thanos add-on"
+  type        = bool
+  default     = false
+}
+
+variable "thanos_helm_config" {
+  description = "Thanos Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "thanos_irsa_policies" {
+  description = "Additional IAM policies for a IAM role for service accounts"
+  type        = list(string)
+  default     = []
 }
 
 #-----------TRAEFIK-------------
@@ -685,6 +769,31 @@ variable "cert_manager_kubernetes_svc_image_pull_secrets" {
   default     = []
 }
 
+variable "enable_cert_manager_istio_csr" {
+  description = "Enable Cert Manager istio-csr add-on"
+  type        = bool
+  default     = false
+}
+
+variable "cert_manager_istio_csr_helm_config" {
+  description = "Cert Manager Istio CSR Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#-----------Argo workflows ADDON-------------
+variable "enable_argo_workflows" {
+  description = "Enable Argo workflows add-on"
+  type        = bool
+  default     = false
+}
+
+variable "argo_workflows_helm_config" {
+  description = "Argo workflows Helm Chart config"
+  type        = any
+  default     = null
+}
+
 #-----------Argo Rollouts ADDON-------------
 variable "enable_argo_rollouts" {
   description = "Enable Argo Rollouts add-on"
@@ -763,6 +872,12 @@ variable "karpenter_irsa_policies" {
 
 variable "karpenter_node_iam_instance_profile" {
   description = "Karpenter Node IAM Instance profile id"
+  type        = string
+  default     = ""
+}
+
+variable "karpenter_sqs_queue_arn" {
+  description = "(Optional) ARN of SQS used by Karpenter when native node termination handling is enabled"
   type        = string
   default     = ""
 }
@@ -1076,6 +1191,32 @@ variable "airflow_helm_config" {
   default     = {}
 }
 
+#-----Apache Kafka Strimzi Operator------
+variable "enable_strimzi_kafka_operator" {
+  description = "Enable Kafka add-on"
+  type        = bool
+  default     = false
+}
+
+variable "strimzi_kafka_operator_helm_config" {
+  description = "Kafka Strimzi Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#-----------Datadog Operator-------------
+variable "enable_datadog_operator" {
+  description = "Enable Datadog Operator add-on"
+  type        = bool
+  default     = false
+}
+
+variable "datadog_operator_helm_config" {
+  description = "Datadog Operator Helm Chart config"
+  type        = any
+  default     = {}
+}
+
 #-----------Promtail ADDON-------------
 variable "enable_promtail" {
   description = "Enable Promtail add-on"
@@ -1194,6 +1335,12 @@ variable "cilium_helm_config" {
 
 }
 
+variable "cilium_enable_wireguard" {
+  description = "Enable wiregaurd encryption"
+  type        = bool
+  default     = false
+}
+
 #-----------Gatekeeper ADDON-------------
 variable "enable_gatekeeper" {
   description = "Enable Gatekeeper add-on"
@@ -1207,6 +1354,18 @@ variable "gatekeeper_helm_config" {
   default     = {}
 }
 
+#-----------Kubernetes Portworx ADDON-------------
+variable "enable_portworx" {
+  description = "Enable Kubernetes Dashboard add-on"
+  type        = bool
+  default     = false
+}
+
+variable "portworx_helm_config" {
+  description = "Kubernetes Portworx Helm Chart config"
+  type        = any
+  default     = null
+}
 
 #-----------Local volume provisioner ADDON-------------
 variable "enable_local_volume_provisioner" {
@@ -1230,6 +1389,39 @@ variable "enable_nvidia_device_plugin" {
 
 variable "nvidia_device_plugin_helm_config" {
   description = "NVIDIA device plugin Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+#-----------App 2048-----------------------
+variable "enable_app_2048" {
+  description = "Enable sample app 2048"
+  type        = bool
+  default     = false
+}
+
+#----------- EMR on EKS -----------------------
+variable "enable_emr_on_eks" {
+  description = "Enable EMR on EKS add-on"
+  type        = bool
+  default     = false
+}
+
+variable "emr_on_eks_config" {
+  description = "EMR on EKS Helm configuration values"
+  type        = any
+  default     = {}
+}
+
+#-----------Consul addon-----------------------
+variable "enable_consul" {
+  description = "Enable consul add-on"
+  type        = bool
+  default     = false
+}
+
+variable "consul_helm_config" {
+  description = "Consul Helm Chart config"
   type        = any
   default     = {}
 }
