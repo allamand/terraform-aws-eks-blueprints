@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.3.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.2">
     
     
       
@@ -567,6 +567,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../argo-workflows/" class="md-nav__link">
+        Argo Workflows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../argocd/" class="md-nav__link">
         ArgoCD
       </a>
@@ -707,6 +721,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../cert-manager-istio-csr/" class="md-nav__link">
+        cert-manager-istio-csr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cert-manager/" class="md-nav__link">
         cert-manager
       </a>
@@ -777,6 +805,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../consul/" class="md-nav__link">
+        Consul
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../crossplane/" class="md-nav__link">
         Crossplane
       </a>
@@ -793,6 +835,20 @@
     <li class="md-nav__item">
       <a href="../csi-secrets-store-provider-aws/" class="md-nav__link">
         secrets-store-csi-driver-provider-aws
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datadog-operator/" class="md-nav__link">
+        Datadog Operator
       </a>
     </li>
   
@@ -863,6 +919,20 @@
     <li class="md-nav__item">
       <a href="../grafana/" class="md-nav__link">
         Grafana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kafka/" class="md-nav__link">
+        Strimzi Operator for Apache Kafka
       </a>
     </li>
   
@@ -1157,6 +1227,20 @@
     <li class="md-nav__item">
       <a href="../tetrate-istio/" class="md-nav__link">
         Tetrate Istio Distro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thanos/" class="md-nav__link">
+        Thanos
       </a>
     </li>
   
@@ -1501,7 +1585,7 @@
 
 <h1 id="apache-airflow-add-on">Apache Airflow add-on<a class="headerlink" href="#apache-airflow-add-on" title="Permanent link">&para;</a></h1>
 <p>This document describes the details of the best practices for building and deploying Self-managed <strong>Highly Scalable Apache Airflow cluster on Kubernetes(Amazon EKS) Cluster</strong>.
-Alternatively, Amazon also provides a fully managed Apache Airflow service(MWAA). Please see this <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/managed-workflow-apache-airflow">example</a> if you are looking to build Amazon MWAA.</p>
+Alternatively, Amazon also provides a fully managed Apache Airflow service(MWAA). Please see this <a href="https://awslabs.github.io/data-on-eks/docs/job-schedulers-eks/aws-managed-airflow">example</a> if you are looking to build Amazon MWAA.</p>
 <p>Apache Airflow is used for the scheduling and orchestration of data pipelines or workflows.
 Orchestration of data pipelines refers to the sequencing, coordination, scheduling, and managing complex data pipelines from diverse sources.
 A workflow is represented as a <a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags.html">DAG</a> (a Directed Acyclic Graph), and contains individual pieces of work called <a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html">Tasks</a>, arranged with dependencies and data flows taken into account.</p>
@@ -1548,12 +1632,12 @@ Ths deployment uses <em>HA scheduler</em> with two replicas to take advantage of
 <p>This deployment example uses internet facing Load Balancer to easily access the WebUI however it's not recommended for Production.
 You can modify the <code>values.yaml</code> to set the Load Balancer to <code>internal</code> and upload certificate to use HTTPS.
 Ensure access to the WebUI using internal domain and network.</p>
-<p>Checkout the <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/analytics/airflow-on-eks">examples</a> of deploying and using Apache Airflow on Amazon EKS.</p>
+<p>Checkout the <a href="https://awslabs.github.io/data-on-eks/docs/job-schedulers-eks/self-managed-airflow">examples</a> of deploying and using Apache Airflow on Amazon EKS.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/analytics/airflow-on-eks">Apache Airflow</a> can be deployed by enabling the add-on via the following.</p>
+<p>The <a href="https://awslabs.github.io/data-on-eks/docs/job-schedulers-eks/self-managed-airflow">Apache Airflow</a> can be deployed by enabling the add-on via the following.</p>
 <div class="highlight"><pre><span></span><code>  enable_airflow = true
 </code></pre></div>
-<p>For production workloads, you can use this <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/analytics/airflow-on-eks">example</a> with custom Helm Config.</p>
+<p>For production workloads, you can use this <a href="https://awslabs.github.io/data-on-eks/docs/job-schedulers-eks/self-managed-airflow">example</a> with custom Helm Config.</p>
 <div class="highlight"><pre><span></span><code>    enable_airflow = true
     airflow_helm_config = {
       name             = &quot;airflow&quot;
@@ -1585,14 +1669,14 @@ Ensure access to the WebUI using internal domain and network.</p>
     }
 </code></pre></div>
 <p>Once deployed, you will be able to see the deployment status</p>
-<div class="highlight"><pre><span></span><code>kubectl get deployment -n airflow
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>airflow
 
-NAME                READY   UP-TO-DATE   AVAILABLE   AGE
-airflow-pgbouncer   <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           77m
-airflow-scheduler   <span class="m">2</span>/2     <span class="m">2</span>            <span class="m">2</span>           77m
-airflow-statsd      <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           77m
-airflow-triggerer   <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           77m
-airflow-webserver   <span class="m">2</span>/2     <span class="m">2</span>            <span class="m">2</span>           77m
+NAME<span class="w">                </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+airflow-pgbouncer<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>77m
+airflow-scheduler<span class="w">   </span><span class="m">2</span>/2<span class="w">     </span><span class="m">2</span><span class="w">            </span><span class="m">2</span><span class="w">           </span>77m
+airflow-statsd<span class="w">      </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>77m
+airflow-triggerer<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>77m
+airflow-webserver<span class="w">   </span><span class="m">2</span>/2<span class="w">     </span><span class="m">2</span><span class="w">            </span><span class="m">2</span><span class="w">           </span>77m
 </code></pre></div>
 
               
@@ -1625,13 +1709,13 @@ airflow-webserver   <span class="m">2</span>/2     <span class="m">2</span>     
       
       
         
-        <a href="../argocd/" class="md-footer__link md-footer__link--next" aria-label="Next: ArgoCD" rel="next">
+        <a href="../argo-workflows/" class="md-footer__link md-footer__link--next" aria-label="Next: Argo Workflows" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ArgoCD
+              Argo Workflows
             </div>
           </div>
           <div class="md-footer__button md-icon">
