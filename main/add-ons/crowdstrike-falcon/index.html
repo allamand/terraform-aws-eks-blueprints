@@ -13,7 +13,7 @@
     
     
       
-        <title>Apache Airflow add-on - Amazon EKS Blueprints for Terraform</title>
+        <title>CrowdStrike Falcon - Amazon EKS Blueprints for Terraform</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apache-airflow-add-on" class="md-skip">
+        <a href="#crowdstrike-falcon" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Apache Airflow add-on
+              CrowdStrike Falcon
             
           </span>
         </div>
@@ -419,128 +419,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Apache Airflow add-on
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../apache-airflow/" class="md-nav__link">
         Apache Airflow add-on
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#production-considerations-for-running-apache-airflow-on-eks" class="md-nav__link">
-    Production considerations for running Apache Airflow on EKS
-  </a>
-  
-    <nav class="md-nav" aria-label="Production considerations for running Apache Airflow on EKS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#airflow-metadata-database" class="md-nav__link">
-    Airflow Metadata Database
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pgbouncer-for-amazon-postgres-rds" class="md-nav__link">
-    PgBouncer for Amazon Postgres RDS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#webserver-secret-key" class="md-nav__link">
-    Webserver Secret Key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-dag-files-with-github-and-efs" class="md-nav__link">
-    Managing DAG Files with GitHub and EFS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-log-files-with-s3-with-irsa" class="md-nav__link">
-    Managing Log Files with S3 with IRSA
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#airflow-statsd-metrics" class="md-nav__link">
-    Airflow StatsD Metrics
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#airflow-executors-celery-vs-kubernetes" class="md-nav__link">
-    Airflow Executors (Celery Vs Kubernetes)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#airflow-schedulers" class="md-nav__link">
-    Airflow Schedulers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accessing-airflow-web-ui" class="md-nav__link">
-    Accessing Airflow Web UI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -816,11 +699,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../crowdstrike-falcon/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CrowdStrike Falcon
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         CrowdStrike Falcon
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#falcon-operator" class="md-nav__link">
+    Falcon Operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-protection-agent-kpa" class="md-nav__link">
+    Kubernetes Protection Agent (KPA)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1482,84 +1427,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#production-considerations-for-running-apache-airflow-on-eks" class="md-nav__link">
-    Production considerations for running Apache Airflow on EKS
-  </a>
-  
-    <nav class="md-nav" aria-label="Production considerations for running Apache Airflow on EKS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#airflow-metadata-database" class="md-nav__link">
-    Airflow Metadata Database
+  <a href="#falcon-operator" class="md-nav__link">
+    Falcon Operator
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pgbouncer-for-amazon-postgres-rds" class="md-nav__link">
-    PgBouncer for Amazon Postgres RDS
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-protection-agent-kpa" class="md-nav__link">
+    Kubernetes Protection Agent (KPA)
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#webserver-secret-key" class="md-nav__link">
-    Webserver Secret Key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-dag-files-with-github-and-efs" class="md-nav__link">
-    Managing DAG Files with GitHub and EFS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-log-files-with-s3-with-irsa" class="md-nav__link">
-    Managing Log Files with S3 with IRSA
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#airflow-statsd-metrics" class="md-nav__link">
-    Airflow StatsD Metrics
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#airflow-executors-celery-vs-kubernetes" class="md-nav__link">
-    Airflow Executors (Celery Vs Kubernetes)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#airflow-schedulers" class="md-nav__link">
-    Airflow Schedulers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accessing-airflow-web-ui" class="md-nav__link">
-    Accessing Airflow Web UI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
 </li>
@@ -1576,106 +1466,24 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/edit/main/docs/add-ons/apache-airflow.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/edit/main/docs/add-ons/crowdstrike-falcon.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="apache-airflow-add-on">Apache Airflow add-on<a class="headerlink" href="#apache-airflow-add-on" title="Permanent link">&para;</a></h1>
-<p>This document describes the details of the best practices for building and deploying Self-managed <strong>Highly Scalable Apache Airflow cluster on Kubernetes(Amazon EKS) Cluster</strong>.
-Alternatively, Amazon also provides a fully managed Apache Airflow service(MWAA).</p>
-<p>Apache Airflow is used for the scheduling and orchestration of data pipelines or workflows.
-Orchestration of data pipelines refers to the sequencing, coordination, scheduling, and managing complex data pipelines from diverse sources.
-A workflow is represented as a <a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags.html">DAG</a> (a Directed Acyclic Graph), and contains individual pieces of work called <a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html">Tasks</a>, arranged with dependencies and data flows taken into account.</p>
-<h2 id="production-considerations-for-running-apache-airflow-on-eks">Production considerations for running Apache Airflow on EKS<a class="headerlink" href="#production-considerations-for-running-apache-airflow-on-eks" title="Permanent link">&para;</a></h2>
-<h3 id="airflow-metadata-database">Airflow Metadata Database<a class="headerlink" href="#airflow-metadata-database" title="Permanent link">&para;</a></h3>
-<p>It is advised to set up an external database for the Airflow metastore. The default Helm chart deploys a Postgres database running in a container but this should be used only for development.
-Apache Airflow recommends to use MySQL or Postgres. This deployment configures the highly available Amazon RDS Postgres database as external database.</p>
-<h3 id="pgbouncer-for-amazon-postgres-rds">PgBouncer for Amazon Postgres RDS<a class="headerlink" href="#pgbouncer-for-amazon-postgres-rds" title="Permanent link">&para;</a></h3>
-<p>Airflow can open a lot of database connections due to its distributed nature and using a connection pooler can significantly reduce the number of open connections on the database.
-This deployment enables the PgBouncer for Postgres</p>
-<h3 id="webserver-secret-key">Webserver Secret Key<a class="headerlink" href="#webserver-secret-key" title="Permanent link">&para;</a></h3>
-<p>You should set a static webserver secret key when deploying with this chart as it will help ensure your Airflow components only restart when necessary.
-This deployment creates Kubernetes secret for Webserver Secret Key and applies to Airflow</p>
-<h3 id="managing-dag-files-with-github-and-efs">Managing DAG Files with GitHub and EFS<a class="headerlink" href="#managing-dag-files-with-github-and-efs" title="Permanent link">&para;</a></h3>
-<p>It's recommended to Mounting DAGs using Git-Sync sidecar with Persistence enabled.
-Developers can create a repo to store the DAGs and configure to sync with Airflow servers.
-This deployment provisions EFS(Amazon Elastic File System) through Persistent Volume Claim with an access mode of ReadWriteMany.
-The Airflow scheduler pod will sync DAGs from a git repository onto the PVC every configured number of seconds.
-The other pods will read the synced DAGs.</p>
-<p>GitSync is configured with a sample repo with this example. This can be replaced with your internal GitHub repo</p>
-<h3 id="managing-log-files-with-s3-with-irsa">Managing Log Files with S3 with IRSA<a class="headerlink" href="#managing-log-files-with-s3-with-irsa" title="Permanent link">&para;</a></h3>
-<p>Airflow writes logs for tasks in a way that allows you to see the logs for each task separately in the Airflow UI.
-Core Airflow implements writing and serving logs locally. However, you can also write logs to remote services via community providers, or write your own loggers.
-This example configures S3 bucket to store the Airflow logs. IAM roles for server account(IRSA) is configured for Airflow pods to access this S3 bucket.</p>
-<h3 id="airflow-statsd-metrics">Airflow StatsD Metrics<a class="headerlink" href="#airflow-statsd-metrics" title="Permanent link">&para;</a></h3>
-<p>This example configures to send the metrics to an existing StatsD to Prometheus endpoint. This can be configured to send it to external StatsD instance</p>
-<h3 id="airflow-executors-celery-vs-kubernetes">Airflow Executors (Celery Vs Kubernetes)<a class="headerlink" href="#airflow-executors-celery-vs-kubernetes" title="Permanent link">&para;</a></h3>
-<p>This deployment uses Kubernetes Executor. With KubernetesExecutor, each task runs in its own pod.
-The pod is created when the task is queued, and terminates when the task completes.
-With KubernetesExecutor, the workers (pods) talk directly to the same Postgres backend as the Scheduler and can to a large degree take on the labor of task monitoring.</p>
-<ul>
-<li>KubernetesExecutor can work well when your tasks are not very uniform with respect to resource requirements or images.</li>
-<li>Each task on the Kubernetes executor gets its own pod, which allows you to pass an executor_config in your task params. This lets you assign resources at the task level by passing an executor_config. e.g, the first task may be a sensor that only requires a few resources, but the downstream tasks have to run on your GPU node pool with a higher CPU request. See the code snippet below</li>
-<li>Since each task is a pod, it is managed independently of the code deploys. This is great for longer running tasks or environments with a lot of users, as users can push new code without fear of interrupting that task.</li>
-<li>This makes the <em>k8s executor the most fault-tolerant</em> option, as running tasks won’t be affected when code is pushed</li>
-<li>In contrast to CeleryExecutor, KubernetesExecutor does not require additional components such as Redis, but does require access to Kubernetes cluster.</li>
-<li>Pod monitoring can be done with native Kubernetes tools</li>
-<li>A Kubernetes watcher is a thread that can subscribe to every change that occurs in Kubernetes’ database. It is alerted when pods start, run, end, and fail. By monitoring this stream, the KubernetesExecutor can discover that the worker crashed and correctly report the task as failed</li>
-</ul>
-<h3 id="airflow-schedulers">Airflow Schedulers<a class="headerlink" href="#airflow-schedulers" title="Permanent link">&para;</a></h3>
-<p>The Airflow scheduler monitors all tasks and DAGs, then triggers the task instances once their dependencies are complete.
-Ths deployment uses <em>HA scheduler</em> with two replicas to take advantage of the existing metadata database.</p>
-<h3 id="accessing-airflow-web-ui">Accessing Airflow Web UI<a class="headerlink" href="#accessing-airflow-web-ui" title="Permanent link">&para;</a></h3>
-<p>This deployment example uses internet facing Load Balancer to easily access the WebUI however it's not recommended for Production.
-You can modify the <code>values.yaml</code> to set the Load Balancer to <code>internal</code> and upload certificate to use HTTPS.
-Ensure access to the WebUI using internal domain and network.</p>
+<h1 id="crowdstrike-falcon">CrowdStrike Falcon<a class="headerlink" href="#crowdstrike-falcon" title="Permanent link">&para;</a></h1>
+<p><a href="https://github.com/CrowdStrike/terraform-kubectl-falcon"><code>terraform-kubectl-falcon</code></a> is a Terraform module that can automate the deployment of CrowdStrike Falcon Sensor and the Kubernetes Protection Agent on a Kubernetes cluster.</p>
+<h2 id="falcon-operator">Falcon Operator<a class="headerlink" href="#falcon-operator" title="Permanent link">&para;</a></h2>
+<p>Falcon Operator is a Kubernetes operator that manages the deployment of the CrowdStrike Falcon Sensor on a Kubernetes cluster. The CrowdStrike Falcon Sensor provides runtime protection for workloads running on a Kubernetes cluster.</p>
+<p>More information can be found in the <a href="https://github.com/CrowdStrike/terraform-kubectl-falcon/blob/main/modules/operator/README.md">Operator submodule</a>.</p>
+<h2 id="kubernetes-protection-agent-kpa">Kubernetes Protection Agent (KPA)<a class="headerlink" href="#kubernetes-protection-agent-kpa" title="Permanent link">&para;</a></h2>
+<p>The Kubernetes Protection Agent provides visibility into the cluster by collecting event information from the Kubernetes layer. These events are correlated to sensor events and cloud events to provide complete cluster visibility.</p>
+<p>More information can be found in the <a href="https://github.com/CrowdStrike/terraform-kubectl-falcon/blob/main/modules/k8s-protection-agent/README.md">KPA sub-module</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>The Apache Airflow can be deployed by enabling the add-on via the following.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="na">enable_airflow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-</code></pre></div>
-<p>For production workloads, you can use the following custom Helm Config.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="na">enable_airflow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<span class="w">    </span><span class="nb">airflow_helm_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="na">name</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;airflow&quot;</span>
-<span class="w">      </span><span class="na">chart</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;airflow&quot;</span>
-<span class="w">      </span><span class="na">repository</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://airflow.apache.org&quot;</span>
-<span class="w">      </span><span class="na">version</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.6.0&quot;</span>
-<span class="w">      </span><span class="na">namespace</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">module.airflow_irsa.namespace</span>
-<span class="w">      </span><span class="na">create_namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
-<span class="w">      </span><span class="na">timeout</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="m">360</span>
-<span class="w">      </span><span class="na">description</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Apache Airflow v2 Helm chart deployment configuration&quot;</span>
-<span class="c1">      # Check the example for `values.yaml` file</span>
-<span class="w">      </span><span class="na">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nf">templatefile</span><span class="p">(</span><span class="s2">&quot;${path.module}/values.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="c1">        # Airflow Postgres RDS Config</span>
-<span class="w">        </span><span class="na">airflow_db_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;airflow&quot;</span>
-<span class="w">        </span><span class="na">airflow_db_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">module.db.db_instance_name</span>
-<span class="w">        </span><span class="na">airflow_db_host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element</span><span class="p">(</span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">module.db.db_instance_endpoint</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="c1">        # S3 bucket config for Logs</span>
-<span class="w">        </span><span class="na">s3_bucket_name</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_s3_bucket.this.id</span>
-<span class="w">        </span><span class="na">webserver_secret_name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">local.airflow_webserver_secret_name</span>
-<span class="w">        </span><span class="na">airflow_service_account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.airflow_service_account</span>
-<span class="w">      </span><span class="p">})]</span>
-
-<span class="w">      </span><span class="na">set_sensitive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">          </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;data.metadataConnection.pass&quot;</span>
-<span class="w">          </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_secretsmanager_secret_version.postgres.secret_string</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-</code></pre></div>
-<p>Once deployed, you will be able to see the deployment status</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>airflow
-
-NAME<span class="w">                </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
-airflow-pgbouncer<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>77m
-airflow-scheduler<span class="w">   </span><span class="m">2</span>/2<span class="w">     </span><span class="m">2</span><span class="w">            </span><span class="m">2</span><span class="w">           </span>77m
-airflow-statsd<span class="w">      </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>77m
-airflow-triggerer<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>77m
-airflow-webserver<span class="w">   </span><span class="m">2</span>/2<span class="w">     </span><span class="m">2</span><span class="w">            </span><span class="m">2</span><span class="w">           </span>77m
-</code></pre></div>
+<p>Refer to the <a href="https://github.com/CrowdStrike/terraform-kubectl-falcon"><code>terraform-kubectl-falcon</code></a> documentation for the most up-to-date information on inputs and outputs.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>A full end to end example of using the <code>terraform-kubectl-falcon</code> module with <code>eks_blueprints</code> can be found in the <a href="https://github.com/CrowdStrike/terraform-kubectl-falcon/tree/v0.1.0/examples/aws-eks-blueprint-example">examples</a> directory of the <code>terraform-kubectl-falcon</code> module.</p>
 
               
             </article>
@@ -1691,7 +1499,7 @@ airflow-webserver<span class="w">   </span><span class="m">2</span>/2<span class
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../agones/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Agones" rel="prev">
+        <a href="../crossplane/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Crossplane" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1700,20 +1508,20 @@ airflow-webserver<span class="w">   </span><span class="m">2</span>/2<span class
               <span class="md-footer__direction">
                 Previous
               </span>
-              Agones
+              Crossplane
             </div>
           </div>
         </a>
       
       
         
-        <a href="../argo-workflows/" class="md-footer__link md-footer__link--next" aria-label="Next: Argo Workflows" rel="next">
+        <a href="../csi-secrets-store-provider-aws/" class="md-footer__link md-footer__link--next" aria-label="Next: secrets-store-csi-driver-provider-aws" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Argo Workflows
+              secrets-store-csi-driver-provider-aws
             </div>
           </div>
           <div class="md-footer__button md-icon">
