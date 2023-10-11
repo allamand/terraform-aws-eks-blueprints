@@ -10,26 +10,28 @@
         <meta name="author" content="AWS">
       
       
-        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/">
+        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/patterns/istio-multi-cluster/">
       
       
+        <link rel="prev" href="../ipv6-eks-cluster/">
       
-        <link rel="next" href="getting-started/">
+      
+        <link rel="next" href="../istio/">
       
       
-      <link rel="icon" href="images/colored-logo.png">
+      <link rel="icon" href="../../images/colored-logo.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.1">
     
     
       
-        <title>Amazon EKS Blueprints for Terraform</title>
+        <title>Istio - Multi-Cluster - Amazon EKS Blueprints for Terraform</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
   
@@ -89,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -114,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#amazon-eks-blueprints-for-terraform" class="md-skip">
+        <a href="#amazon-eks-multi-cluster-w-istio" class="md-skip">
           Skip to content
         </a>
       
@@ -134,9 +136,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Amazon EKS Blueprints for Terraform" class="md-header__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
+    <a href="../.." title="Amazon EKS Blueprints for Terraform" class="md-header__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
       
-  <img src="images/white-logo.png" alt="logo">
+  <img src="../../images/white-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -153,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Istio - Multi-Cluster
             
           </span>
         </div>
@@ -239,9 +241,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Amazon EKS Blueprints for Terraform" class="md-nav__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
+    <a href="../.." title="Amazon EKS Blueprints for Terraform" class="md-nav__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
       
-  <img src="images/white-logo.png" alt="logo">
+  <img src="../../images/white-logo.png" alt="logo">
 
     </a>
     Amazon EKS Blueprints for Terraform
@@ -265,6 +267,280 @@
       
   
   
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agones-game-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agones Game Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appmesh-mtls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS AppMesh mTLS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArgoCD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-vpc-cni-network-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS VPC CNI Network Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blue-green-upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blue/Green Upgrade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elastic-fabric-adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elastic Fabric Adapter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fargate-serverless/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fargate Serverless
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fully-private-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fully Private Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipv6-eks-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPv6 Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -280,18 +556,18 @@
           
   
   <span class="md-ellipsis">
-    Overview
+    Istio - Multi-Cluster
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Overview
+    Istio - Multi-Cluster
   </span>
   
 
@@ -313,23 +589,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
+  <a href="#notable-configuration" class="md-nav__link">
+    Notable configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#consumption" class="md-nav__link">
-    Consumption
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
   </a>
   
-    <nav class="md-nav" aria-label="Consumption">
+    <nav class="md-nav" aria-label="Folder structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#related-projects" class="md-nav__link">
-    Related Projects
+  <a href="#0certs-tool" class="md-nav__link">
+    0.certs-tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0vpc" class="md-nav__link">
+    0.vpc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1cluster1" class="md-nav__link">
+    1.cluster1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2cluster2" class="md-nav__link">
+    2.cluster2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3istio-multi-primary" class="md-nav__link">
+    3.istio-multi-primary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4test-connectivity" class="md-nav__link">
+    4.test-connectivity
   </a>
   
 </li>
@@ -340,29 +651,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform-caveats" class="md-nav__link">
-    Terraform Caveats
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-feedback" class="md-nav__link">
-    Support &amp; Feedback
+  <a href="#deploy" class="md-nav__link">
+    Deploy
   </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prereq-provision-certificates" class="md-nav__link">
+    Prereq - Provision Certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-0-create-the-vpc" class="md-nav__link">
+    Step 0 - Create the VPC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-deploy-cluster-1" class="md-nav__link">
+    Step 1 - Deploy cluster-1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-deploy-cluster-2" class="md-nav__link">
+    Step 2 - Deploy cluster-2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-istio-multi-primary" class="md-nav__link">
+    Step 3 - Configure Istio Multi-Primary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-test-installation-and-connectivity" class="md-nav__link">
+    Step 4 - test installation and connectivity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#destroy" class="md-nav__link">
+    Destroy
   </a>
   
 </li>
@@ -374,78 +726,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Patterns
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Patterns
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/agones-game-controller/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Agones Game Controller
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -454,207 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/appmesh-mtls/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AWS AppMesh mTLS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/argocd/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ArgoCD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/aws-vpc-cni-network-policy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AWS VPC CNI Network Policy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/blue-green-upgrade/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Blue/Green Upgrade
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/elastic-fabric-adapter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Elastic Fabric Adapter
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/external-secrets/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    External Secrets
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/fargate-serverless/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fargate Serverless
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/fully-private-cluster/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fully Private Cluster
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/ipv6-eks-cluster/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    IPv6 Networking
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/istio-multi-cluster/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Istio - Multi-Cluster
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="patterns/istio/" class="md-nav__link">
+      <a href="../istio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/karpenter/" class="md-nav__link">
+      <a href="../karpenter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/multi-tenancy-with-teams/" class="md-nav__link">
+      <a href="../multi-tenancy-with-teams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/private-public-ingress/" class="md-nav__link">
+      <a href="../private-public-ingress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/privatelink-access/" class="md-nav__link">
+      <a href="../privatelink-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -754,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/sso-iam-identity-center/" class="md-nav__link">
+      <a href="../sso-iam-identity-center/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/sso-okta/" class="md-nav__link">
+      <a href="../sso-okta/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -794,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/stateful/" class="md-nav__link">
+      <a href="../stateful/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -814,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/tls-with-aws-pca-issuer/" class="md-nav__link">
+      <a href="../tls-with-aws-pca-issuer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -834,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/wireguard-with-cilium/" class="md-nav__link">
+      <a href="../wireguard-with-cilium/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="snippets/ipv4-prefix-delegation/" class="md-nav__link">
+      <a href="../../snippets/ipv4-prefix-delegation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="snippets/vpc-cni-custom-networking/" class="md-nav__link">
+      <a href="../../snippets/vpc-cni-custom-networking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -976,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/motivation/" class="md-nav__link">
+      <a href="../../v4-to-v5/motivation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/cluster/" class="md-nav__link">
+      <a href="../../v4-to-v5/cluster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1016,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/addons/" class="md-nav__link">
+      <a href="../../v4-to-v5/addons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1036,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/teams/" class="md-nav__link">
+      <a href="../../v4-to-v5/teams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1103,23 +1183,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
+  <a href="#notable-configuration" class="md-nav__link">
+    Notable configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#consumption" class="md-nav__link">
-    Consumption
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
   </a>
   
-    <nav class="md-nav" aria-label="Consumption">
+    <nav class="md-nav" aria-label="Folder structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#related-projects" class="md-nav__link">
-    Related Projects
+  <a href="#0certs-tool" class="md-nav__link">
+    0.certs-tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0vpc" class="md-nav__link">
+    0.vpc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1cluster1" class="md-nav__link">
+    1.cluster1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2cluster2" class="md-nav__link">
+    2.cluster2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3istio-multi-primary" class="md-nav__link">
+    3.istio-multi-primary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4test-connectivity" class="md-nav__link">
+    4.test-connectivity
   </a>
   
 </li>
@@ -1130,29 +1245,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform-caveats" class="md-nav__link">
-    Terraform Caveats
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-feedback" class="md-nav__link">
-    Support &amp; Feedback
+  <a href="#deploy" class="md-nav__link">
+    Deploy
   </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prereq-provision-certificates" class="md-nav__link">
+    Prereq - Provision Certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-0-create-the-vpc" class="md-nav__link">
+    Step 0 - Create the VPC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-deploy-cluster-1" class="md-nav__link">
+    Step 1 - Deploy cluster-1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-deploy-cluster-2" class="md-nav__link">
+    Step 2 - Deploy cluster-2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-istio-multi-primary" class="md-nav__link">
+    Step 3 - Configure Istio Multi-Primary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-test-installation-and-connectivity" class="md-nav__link">
+    Step 4 - test installation and connectivity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#destroy" class="md-nav__link">
+    Destroy
   </a>
   
 </li>
@@ -1175,133 +1331,93 @@
   
 
 
-<!-- BEGIN INCLUDE ../README.md -->
-<h1 id="amazon-eks-blueprints-for-terraform">Amazon EKS Blueprints for Terraform<a class="headerlink" href="#amazon-eks-blueprints-for-terraform" title="Permanent link">&para;</a></h1>
-<p>Welcome to Amazon EKS Blueprints for Terraform!</p>
-<p>This project contains a collection of Amazon EKS cluster patterns implemented in Terraform that
-demonstrate how fast and easy it is for customers to adopt <a href="https://aws.amazon.com/eks/">Amazon EKS</a>.
-The patterns can be used by AWS customers, partners, and internal AWS teams to configure and manage
-complete EKS clusters that are fully bootstrapped with the operational software that is needed to
-deploy and operate workloads.</p>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<p>Kubernetes is a powerful and extensible container orchestration technology that allows you to deploy
-and manage containerized applications at scale. The extensible nature of Kubernetes also allows you
-to use a wide range of popular open-source tools in Kubernetes clusters. However, With the wide array
-of tooling and design choices available, configuring an EKS cluster that meets your organization’s
-specific needs can take a significant amount of time. It involves integrating a wide range of
-open-source tools and AWS services as well as expertise in AWS and Kubernetes.</p>
-<p>AWS customers have asked for patterns that demonstrate how to integrate the landscape of Kubernetes
-tools and make it easy for them to provision complete, opinionated EKS clusters that meet specific
-application requirements. Customers can utilize EKS Blueprints to configure and deploy purpose built
-EKS clusters, and start onboarding workloads in days, rather than months.</p>
-<h2 id="consumption">Consumption<a class="headerlink" href="#consumption" title="Permanent link">&para;</a></h2>
-<p>EKS Blueprints for Terraform has been designed to be consumed in the following manners:</p>
+<!-- BEGIN INCLUDE ../../patterns/istio-multi-cluster/README.md -->
+<h1 id="amazon-eks-multi-cluster-w-istio">Amazon EKS Multi-Cluster w/ Istio<a class="headerlink" href="#amazon-eks-multi-cluster-w-istio" title="Permanent link">&para;</a></h1>
+<p>This pattern demonstrates 2 Amazon EKS clusters configured with Istio.
+Istio will be set-up to operate in a <a href="https://istio.io/latest/docs/setup/install/multicluster/multi-primary/">Multi-Primary</a> configuration, where services are shared across clusters.</p>
+<p>Refer to the <a href="https://istio.io/latest/docs/concepts/">documentation</a> for <code>Istio</code> concepts.</p>
+<h2 id="notable-configuration">Notable configuration<a class="headerlink" href="#notable-configuration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>This sample rely on reading data from Terraform Remote State in the different folders. In a production setup, Terraform Remote State is stored in a persistent backend such as Terraform Cloud or S3. For more information, please refer to the Terraform <a href="https://developer.hashicorp.com/terraform/language/settings/backends/configuration">Backends</a> documentation</li>
+<li>The process for connecting clusters is seperated from the cluster creation as it requires all cluster to be created first, and excahnge configuration between one to the other</li>
+</ul>
+<h2 id="folder-structure">Folder structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h2>
+<h3 id="0certs-tool"><a href="../../patterns/istio-multi-cluster/0.certs-tool/"><code>0.certs-tool</code></a><a class="headerlink" href="#0certs-tool" title="Permanent link">&para;</a></h3>
+<p>This folder is the <a href="https://github.com/istio/istio/tree/master/tools/certs">Makefiles</a> from the Istio projects to generate 1 root CA with 2 intermediate CAs for each cluster. Please refer to the <a href="https://istio.io/latest/docs/tasks/security/cert-management/">"Certificate Management"</a> section in the Istio documentation. For production setup it's <a href="https://istio.io/latest/docs/tasks/security/cert-management/plugin-ca-cert/#plug-in-certificates-and-key-into-the-cluster">highly recommended</a> by the Istio project to have a production-ready CA solution.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong>  The <a href="../../patterns/istio-multi-cluster/0.certs-tool/create-certs.sh">0.certs-tool/create-certs.sh</a> script needs to run before the cluster creation so the code will pick up the relevant certificates</p>
+</blockquote>
+<h3 id="0vpc"><a href="../../patterns/istio-multi-cluster/0.vpc/"><code>0.vpc</code></a><a class="headerlink" href="#0vpc" title="Permanent link">&para;</a></h3>
+<p>This folder creates the VPC for both clusters. The VPC creation is not part of the cluster provisionig and therefore lives in a seperate folder.
+To support the multi-cluster/Multi-Primary setup, this folder also creates additional security group to be used by each cluster worker nodes to allow cross-cluster communication (resources <code>cluster1_additional_sg</code> and <code>cluster2_additional_sg</code>). These security groups allow communication from one to the other and each will be added to the worker nodes of the relevant cluster</p>
+<h3 id="1cluster1"><a href="../../patterns/istio-multi-cluster/1.cluster1/"><code>1.cluster1</code></a><a class="headerlink" href="#1cluster1" title="Permanent link">&para;</a></h3>
+<p>This folder creates an Amazon EKS Cluster, named by default <code>cluster-1</code> (see <a href="../../patterns/istio-multi-cluster/1.cluster1/variables.tf"><code>variables.tf</code></a>), with AWS Load Balancer Controller, and Istio installation.
+Configurations in this folder to be aware of:</p>
+<ul>
+<li>The cluster is configured to use the security groups created in the <code>0.vpc</code> folder (<code>cluster1_additional_sg</code> in this case).</li>
+<li>Kubernetes Secret named <code>cacerts</code> is created with the certificates created by the <a href="../../patterns/istio-multi-cluster/0.certs-tool/create-certs.sh">0.certs-tool/create-certs.sh</a> script</li>
+<li>Kubernetes Secret named <code>cacerts</code> named <code>istio-reader-service-account-istio-remote-secret-token</code> of type <code>Service-Account</code> is being created. This is to replicate the <a href="https://istio.io/latest/docs/reference/commands/istioctl/#istioctl-experimental-create-remote-secret">istioctl experimental create-remote-secret</a> command. This secret will be used in folder <a href="../../patterns/istio-multi-cluster/3.istio-multi-primary/"><code>3.istio-multi-primary</code></a> to apply kubeconfig secret with tokens from the other cluster to be abble to communicate to the other cluster API Server</li>
+</ul>
+<h3 id="2cluster2"><a href="../../patterns/istio-multi-cluster/2.cluster2/"><code>2.cluster2</code></a><a class="headerlink" href="#2cluster2" title="Permanent link">&para;</a></h3>
+<p>Same configuration as in <code>1.cluster1</code> except the name of the cluster which is <code>cluster-2</code>.</p>
+<h3 id="3istio-multi-primary"><a href="../../patterns/istio-multi-cluster/3.istio-multi-primary/"><code>3.istio-multi-primary</code></a><a class="headerlink" href="#3istio-multi-primary" title="Permanent link">&para;</a></h3>
+<p>This folder deploys a reader secret on each cluster. It replicates the <a href="https://istio.io/latest/docs/reference/commands/istioctl/#istioctl-experimental-create-remote-secret"><code>istioctl experimental create-remote-secret</code></a> by applying a kubeconfig secret prefixed <code>istio-remote-secret-</code> with the cluster name at the end.</p>
+<h3 id="4test-connectivity"><a href="../../patterns/istio-multi-cluster/4.test-connectivity/"><code>4.test-connectivity</code></a><a class="headerlink" href="#4test-connectivity" title="Permanent link">&para;</a></h3>
+<p>This folder test the installation connectivity. It follows the Istio guide <a href="https://istio.io/latest/docs/setup/install/multicluster/verify/">Verify the installation</a> by deploying services on each cluster, and <code>curl</code>-ing from one to the other</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Ensure that you have the following tools installed locally:</p>
 <ol>
-<li>Reference: Users can refer to the patterns and snippets provided to help guide them to their desired
-solution. Users will typically view how the pattern or snippet is configured to achieve the desired
-end result and then replicate that in their environment.</li>
-<li>Copy &amp; Paste: Users can copy and paste the patterns and snippets into their own environment, using
-EKS Blueprints as the starting point for their implementation. Users can then adapt the initial pattern
-to customize it to their specific needs.</li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">aws cli</a></li>
+<li><a href="https://Kubernetes.io/docs/tasks/tools/">kubectl</a></li>
+<li><a href="https://learn.hashicorp.com/tutorials/terraform/install-cli">terraform</a></li>
 </ol>
-<p>EKS Blueprints for Terraform are not intended to be consumed as-is directly from this project. In
-"Terraform speak" - the patterns and snippets provided in this repository are not designed to be consumed
-as a Terraform module. Therefore, the patterns provided only contain <code>variables</code> when certain information
-is required to deploy the pattern (i.e. - a Route53 hosted zone ID, or ACM certificate ARN) and generally
-use local variables. If you wish to deploy the patterns into a different region or with other changes, it
-is recommended that you make those modifications locally before applying the pattern. EKS Blueprints for
-Terraform will not expose variables and outputs in the same manner that Terraform modules follow in
-order to avoid confusion around the consumption model.</p>
-<p>However, we do have a number of Terraform modules that were created to support
-EKS Blueprints in addition to the community hosted modules. Please see the respective projects for more
-details on the modules constructed to support EKS Blueprints for Terraform; those projects are listed
-<a href="https://aws-ia.github.io/terraform-aws-eks-blueprints/#related-projects">below</a>.</p>
-<ul>
-<li><a href="https://github.com/aws-ia/terraform-aws-eks-blueprints-addon"><code>terraform-aws-eks-blueprint-addon</code></a> -
-(Note the singular form) Terraform module which can provision an addon using the Terraform
-<code>helm_release</code> resource in addition to an IAM role for service account (IRSA).</li>
-<li><a href="https://github.com/aws-ia/terraform-aws-eks-blueprints-addons"><code>terraform-aws-eks-blueprint-addons</code></a> -
-(Note the plural form) Terraform module which can provision multiple addons; both EKS addons
-using the <code>aws_eks_addon</code> resource as well as Helm chart based addons using the
-<a href="https://github.com/aws-ia/terraform-aws-eks-blueprints-addon"><code>terraform-aws-eks-blueprint-addon</code></a> module.</li>
-<li><a href="https://github.com/aws-ia/terraform-aws-eks-blueprints-teams"><code>terraform-aws-eks-blueprints-teams</code></a> -
-Terraform module that creates Kubernetes multi-tenancy resources and configurations, allowing both
-administrators and application developers to access only the resources which they are responsible for.</li>
-</ul>
-<h3 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h3>
-<p>In addition to the supporting EKS Blueprints Terraform modules listed above, there are a number of
-related projects that users should be aware of:</p>
-<ol>
-<li>
-<p>GitOps</p>
-<ul>
-<li><a href="https://github.com/aws-ia/terraform-aws-eks-ack-addons"><code>terraform-aws-eks-ack-addons</code></a> -
-  Terraform module to deploy ACK controllers onto EKS clusters</li>
-<li><a href="https://github.com/awslabs/crossplane-on-eks"><code>crossplane-on-eks</code></a> - Crossplane Blueprints
-is an open source repo to bootstrap Amazon EKS clusters and provision AWS resources using a
-library of Crossplane Compositions (XRs) with Composite Resource Definitions (XRDs).</li>
-</ul>
-</li>
-<li>
-<p>Data on EKS</p>
-<ul>
-<li><a href="https://github.com/awslabs/data-on-eks"><code>data-on-eks</code></a> - A collection of blueprints intended
-for data workloads on Amazon EKS.</li>
-<li><a href="https://github.com/aws-ia/terraform-aws-eks-data-addons"><code>terraform-aws-eks-data-addons</code></a> -
-Terraform module to deploy multiple addons that are specific to data workloads on EKS clusters.</li>
-</ul>
-</li>
-<li>
-<p>Observability Accelerator</p>
-<ul>
-<li><a href="https://github.com/aws-observability/terraform-aws-observability-accelerator"><code>terraform-aws-observability-accelerator</code></a> -
-A set of opinionated modules to help you set up observability for your AWS environments with
-AWS-managed observability services such as Amazon Managed Service for Prometheus, Amazon
-Managed Grafana, AWS Distro for OpenTelemetry (ADOT) and Amazon CloudWatch</li>
-</ul>
-</li>
-</ol>
-<h2 id="terraform-caveats">Terraform Caveats<a class="headerlink" href="#terraform-caveats" title="Permanent link">&para;</a></h2>
-<p>EKS Blueprints for Terraform does not intend to teach users the recommended practices for Terraform
-nor does it offer guidance on how users should structure their Terraform projects. The patterns
-provided are intended to show users how they can achieve a defined architecture or configuration
-in a way that they can quickly and easily get up and running to start interacting with that pattern.
-Therefore, there are a few caveats users should be aware of when using EKS Blueprints for Terraform:</p>
-<ol>
-<li>
-<p>We recognize that most users will already have an existing VPC in a separate Terraform workspace.
-However, the patterns provided come complete with a VPC to ensure a stable, deployable example that
-has been tested and validated.</p>
-</li>
-<li>
-<p>Hashicorp <a href="https://github.com/hashicorp/terraform/issues/27785#issuecomment-780017326">does not recommend providing computed values in provider blocks</a>
-, which means that the cluster configuration should be defined in a workspace separate from the resources
-deployed onto the cluster (i.e. - addons). However, to simplify the pattern experience, we have defined
-everything in one workspace and provided instructions to provision the patterns using a targeted
-apply approach. Users are encouraged to investigate a Terraform project structure that suites their needs;
-EKS Blueprints for Terraform does not have an opinion in this matter and will defer to Hashicorp's guidance.</p>
-</li>
-<li>
-<p>Patterns are not intended to be consumed in-place in the same manner that one would consume a module.
-Therefore, we do not provide variables and outputs to expose various levels of configuration for the examples.
-Users can modify the pattern locally after cloning to suite their requirements.</p>
-</li>
-<li>
-<p>Please see the <a href="https://aws-ia.github.io/terraform-aws-eks-blueprints/faq/#provider-authentication">FAQ section</a>
-on authenticating Kubernetes based providers (<code>kubernetes</code>, <code>helm</code>, <code>kubectl</code>) to Amazon EKS clusters
-regarding the use of static tokens versus dynamic tokens using the <code>awscli</code>.</p>
-</li>
-</ol>
-<h2 id="support-feedback">Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permanent link">&para;</a></h2>
-<p>EKS Blueprints for Terraform is maintained by AWS Solution Architects. It is not part of an AWS
-service and support is provided as a best-effort by the EKS Blueprints community. To provide feedback,
-please use the <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/issues">issues templates</a>
-provided. If you are interested in contributing to EKS Blueprints, see the
-<a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/CONTRIBUTING.md">Contribution guide</a>.</p>
-<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
-<p>See <a href="../CONTRIBUTING.md#security-issue-notifications">CONTRIBUTING</a> for more information.</p>
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>Apache-2.0 Licensed. See <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/LICENSE">LICENSE</a>.</p>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<h3 id="prereq-provision-certificates">Prereq - Provision Certificates<a class="headerlink" href="#prereq-provision-certificates" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">0</span>.certs-tool
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>./create-certs.sh
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cd..
+</span></code></pre></div>
+<h3 id="step-0-create-the-vpc">Step 0 - Create the VPC<a class="headerlink" href="#step-0-create-the-vpc" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">0</span>.certs-tool
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>./create-certs.sh
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cd..
+</span></code></pre></div>
+<h3 id="step-1-deploy-cluster-1">Step 1 - Deploy cluster-1<a class="headerlink" href="#step-1-deploy-cluster-1" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">1</span>.cluster1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>terraform<span class="w"> </span>init
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-auto-approve
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>cd..
+</span></code></pre></div>
+<h3 id="step-2-deploy-cluster-2">Step 2 - Deploy cluster-2<a class="headerlink" href="#step-2-deploy-cluster-2" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">2</span>.cluster2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>terraform<span class="w"> </span>init
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-auto-approve
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>cd..
+</span></code></pre></div>
+<h3 id="step-3-configure-istio-multi-primary">Step 3 - Configure Istio Multi-Primary<a class="headerlink" href="#step-3-configure-istio-multi-primary" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">3</span>.istio-multi-primary
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>terraform<span class="w"> </span>init
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-auto-approve
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>cd..
+</span></code></pre></div>
+<h3 id="step-4-test-installation-and-connectivity">Step 4 - test installation and connectivity<a class="headerlink" href="#step-4-test-installation-and-connectivity" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">4</span>.test-connectivity
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>./test_connectivity.sh
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>cd..
+</span></code></pre></div>
+<p>This script deploy the sample application to both clusters and run curl from a pod in one cluster to a service that is deployed in both cluster. You should expect to see responses from both <code>V1</code> and <code>V2</code> of the sample application.
+The script run 4 <code>curl</code> command from cluster-1 to cluster-2 and vice versa</p>
+<h2 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h2>
+<p>To teardown and remove the resources created in this example:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">3</span>.istio-multi-primary
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-destroy<span class="w"> </span>-autoapprove
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">cd</span><span class="w"> </span>../2.cluster2
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-destroy<span class="w"> </span>-autoapprove
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">cd</span><span class="w"> </span>../1.cluster1
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-destroy<span class="w"> </span>-autoapprove
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">cd</span><span class="w"> </span>../0.vpc
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-destroy<span class="w"> </span>-autoapprove
+</span></code></pre></div>
 <!-- END INCLUDE -->
 
 
@@ -1344,10 +1460,10 @@ provided. If you are interested in contributing to EKS Blueprints, see the
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs.sticky"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
